@@ -29,6 +29,17 @@ namespace PayPal.Api
             }
             this.AccessToken = accessToken;
         }
+        
+        /// <summary>
+        /// Initializes a new instance of <seealso cref="APIContext"/> that is used when making HTTP calls to the PayPal REST API; as well as sets and verifies the state of an <paramref name="accessToken"/>.
+        /// </summary>
+        /// <param name="accessToken">OAuth access token to use when making API requests</param>
+        /// <param name="config">Gets or sets the PayPal configuration settings to be used when making API requests.</param>
+        public APIContext(string accessToken, Dictionary<string, string> config) : this(accessToken)
+        {
+            this.Config = config;
+        }
+        
 
         /// <summary>
         /// Initializes a new instance of <seealso cref="APIContext"/> that is used when making HTTP calls to the PayPal REST API; as well as sets and verifies the states of an <paramref name="accessToken"/> and <paramref name="requestId"/>.
